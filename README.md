@@ -17,7 +17,7 @@ guarantees the quality of the solution.
 
 ![x](./fig/Fig1.png)
 
-3.	In visual studo, you start the program. The Form as the follows you can see. Click the button the red arrow points to.
+3.	When the program has run, the Form as the follows you can see. Click the button the red arrow points to.
 
 ![x](./fig/Fig2.png)
 
