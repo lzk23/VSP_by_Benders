@@ -3,7 +3,7 @@ The code is for the paper, "Optimizing vehicle scheduling based on variable time
 
 # What it can do?
 In practice, vehicle scheduling is planned on a variable timetable so that the departure times of trips can be shifed in tolerable
-ranges, rather than on a fxed timetable, to decrease the required feet size. Tis paper investigates the vehicle scheduling problem
+ranges, rather than on a fxed timetable, to decrease the required feet size. This paper investigates the vehicle scheduling problem
 on a variable timetable with the constraint that each vehicle can perform limited trips. Since the connection-based model is difcult
 to solve by optimization sofware for a medium-scale or large-scale instance, a designed path-based model is developed. A Bendersand-Price algorithm by combining the Benders decomposition and column generation is proposed to solve the LP-relaxation of
 the path-based model, and a bespoke Branch-and-Price is used to obtain the integer solution. Numerical experiments indicate that
