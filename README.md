@@ -1,5 +1,5 @@
 # VSP_by_Benders
-The code is for the paper, "Optimizing vehicle scheduling based on variable timetable by Benders-and-Price approach", accepted by Journal of Advanced Transportation(2020)
+The code is for the paper, "Optimizing vehicle scheduling based on variable timetable by Benders-and-Price approach"(https://downloads.hindawi.com/journals/jat/2019/2781590.pdf), accepted by Journal of Advanced Transportation(2020)
 
 # What it can do?
 
