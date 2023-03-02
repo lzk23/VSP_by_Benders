@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01973319-79D0-4C6C-9504-A8278A4BAAA7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScheduleSys</RootNamespace>
+    <AssemblyName>ScheduleSys</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GraphSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GraphSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphSharp.Controls, Version=1.0.6308.29849, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GraphSharp.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphSharp.Sample, Version=1.0.3438.42545, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GraphSharp.Sample.exe</HintPath>
+    </Reference>
+    <Reference Include="Gurobi81.NET">
+      <HintPath>C:\gurobi810\win64\bin\Gurobi81.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QuickGraph, Version=3.2.40122.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFExtensions, Version=1.0.3437.34043, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WPFExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithm\ArriveAndDepartureEvent.cs" />
+    <Compile Include="Algorithm\Benders.cs" />
+    <Compile Include="Algorithm\Benders2.cs" />
+    <Compile Include="Algorithm\Benders3.cs" />
+    <Compile Include="Algorithm\Benders4.cs" />
+    <Compile Include="Algorithm\BendersCallback.cs" />
+    <Compile Include="Algorithm\BranchAndBound.cs" />
+    <Compile Include="Algorithm\ChangeToEvent.cs" />
+    <Compile Include="DataReadWrite.cs" />
+    <Compile Include="DataShow\ArriveDeparture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\ArriveDeparture.Designer.cs">
+      <DependentUpon>ArriveDeparture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\ShowResultByGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\ShowResultByGraph.Designer.cs">
+      <DependentUpon>ShowResultByGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\InitialTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\InitialTimetable.Designer.cs">
+      <DependentUpon>InitialTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\IntervalGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\IntervalGraph.Designer.cs">
+      <DependentUpon>IntervalGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\Message.Designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\NewTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\NewTimetable.Designer.cs">
+      <DependentUpon>NewTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\NewTraindiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\NewTraindiagram.Designer.cs">
+      <DependentUpon>NewTraindiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\SelectSolveMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\SelectSolveMethod.Designer.cs">
+      <DependentUpon>SelectSolveMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\SolvingResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataShow\SolvingResult.Designer.cs">
+      <DependentUpon>SolvingResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataShow\Status.cs" />
+    <Compile Include="Figure\GraphSharpControl.xaml.cs">
+      <DependentUpon>GraphSharpControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Figure\GraphSharpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Figure\GraphSharpForm.Designer.cs">
+      <DependentUpon>GraphSharpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialTimetable.Designer.cs">
+      <DependentUpon>InitialTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListColoring\AdjacencyGraphForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListColoring\AdjacencyGraphForm.Designer.cs">
+      <DependentUpon>AdjacencyGraphForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph.cs" />
+    <Compile Include="Model\LongestPath.cs" />
+    <Compile Include="Model\LongestPath2.cs" />
+    <Compile Include="Model\Model4.cs" />
+    <Compile Include="Model\Model4_callback.cs" />
+    <Compile Include="Model\Model5.cs" />
+    <Compile Include="Model\ModelTimetableandrollingstock.cs" />
+    <Compile Include="Model\ModelTimetableandstock2.cs" />
+    <Compile Include="Model\ModelTimetableandstock3.cs" />
+    <Compile Include="Model\RolllingStock.cs" />
+    <Compile Include="PaintClass\PaintStyle.cs" />
+    <Compile Include="PaintClass\GraphicsText.cs" />
+    <Compile Include="PaintClass\TrainDiagramPaint.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ShortestPath\Bellman-Ford.cs" />
+    <Compile Include="ShortestPath\GraphBuilder.cs" />
+    <Compile Include="ShortestPath\IAlgorithm.cs" />
+    <Compile Include="ShortestPath\Network.cs" />
+    <Compile Include="ShortestPath\SPFA_Restrict.cs" />
+    <Compile Include="ShortestPath\stock_shortest_path.cs" />
+    <Compile Include="SystemSetting\ParemeterSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetting\ParemeterSetting.Designer.cs">
+      <DependentUpon>ParemeterSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetting\Delayloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetting\Delayloading.Designer.cs">
+      <DependentUpon>Delayloading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetting\SolvingSizeTrainStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetting\SolvingSizeTrainStation.Designer.cs">
+      <DependentUpon>SolvingSizeTrainStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetting\TrainColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetting\TrainColor.Designer.cs">
+      <DependentUpon>TrainColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetting\TrainSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetting\TrainSelect.Designer.cs">
+      <DependentUpon>TrainSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs" />
+    <EmbeddedResource Include="DataShow\ArriveDeparture.resx">
+      <DependentUpon>ArriveDeparture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\ShowResultByGraph.resx">
+      <DependentUpon>ShowResultByGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\InitialTimetable.resx">
+      <DependentUpon>InitialTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\IntervalGraph.resx">
+      <DependentUpon>IntervalGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\NewTimetable.resx">
+      <DependentUpon>NewTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\NewTraindiagram.resx">
+      <DependentUpon>NewTraindiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\SelectSolveMethod.resx">
+      <DependentUpon>SelectSolveMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataShow\SolvingResult.resx">
+      <DependentUpon>SolvingResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Figure\GraphSharpForm.resx">
+      <DependentUpon>GraphSharpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialTimetable.resx">
+      <DependentUpon>InitialTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListColoring\AdjacencyGraphForm.resx">
+      <DependentUpon>AdjacencyGraphForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetting\Delayloading.resx">
+      <DependentUpon>Delayloading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetting\ParemeterSetting.resx">
+      <DependentUpon>ParemeterSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetting\SolvingSizeTrainStation.resx">
+      <DependentUpon>SolvingSizeTrainStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetting\TrainColor.resx">
+      <DependentUpon>TrainColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetting\TrainSelect.resx">
+      <DependentUpon>TrainSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\pancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\btnfind.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\change.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Query.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\name.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\time.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\time2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\conflict.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZedGraphPro\ZedGraphPro.csproj">
+      <Project>{b8d10d9a-de12-4847-b5fc-436ce524ca32}</Project>
+      <Name>ZedGraphPro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Figure\GraphSharpControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
