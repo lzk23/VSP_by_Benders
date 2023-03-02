@@ -1,0 +1,40 @@
+\ Model (null)_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ deviate_2: d[,T0] + deviate[T0] >= 320
+ deviate_1: - d[,T4] + deviate[T4] >= -480
+ runtime5: a[,T4] - d[,T4] = 45
+ runtime9: a[,T8] - d[,T8] = 45
+ runtime13: a[,T12] - d[,T12] = 45
+ connection_train_MaxT4_T8: - a[,T4] + d[,T8]
+   - 1e+06 connection_train[T4,T8] <= -999940
+ connection_train_MaxT4_T12: - a[,T4] + d[,T12]
+   - 1e+06 connection_train[T4,T12] <= -999940
+ connection_train_MaxT8_T0: d[,T0] - a[,T8] - 1e+06 connection_train[T8,T0]
+   <= -999940
+ connection_train_MaxT12_T0: d[,T0] - a[,T12]
+   - 1e+06 connection_train[T12,T0] <= -999940
+ most_one_stock_for_connection_1: e[R4] + m[T4] + connection_train[T4,T7]
+   + connection_train[T4,T8] + connection_train[T4,T9]
+   + connection_train[T4,T10] + connection_train[T4,T11]
+   + connection_train[T4,T12] + connection_train[T4,T13] = 1
+Bounds
+ d[,T0] free
+ -infinity <= deviate[T0] <= 1440
+ a[,T4] free
+ d[,T4] free
+ -infinity <= deviate[T4] <= 1440
+ a[,T8] free
+ d[,T8] free
+ a[,T12] free
+ d[,T12] free
+Binaries
+ e[R4] m[T4] connection_train[T4,T7] connection_train[T4,T8]
+ connection_train[T4,T9] connection_train[T4,T10] connection_train[T4,T11]
+ connection_train[T4,T12] connection_train[T4,T13] connection_train[T8,T0]
+ connection_train[T12,T0]
+Generals
+ d[,T0] deviate[T0] a[,T4] d[,T4] deviate[T4] a[,T8] d[,T8] a[,T12] d[,T12]
+End
